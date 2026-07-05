@@ -1,0 +1,129 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <title>Online Grocery Store Dashboard</title> 
+  <style> 
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+       header, footer { background-color: #28a745; color: white; padding: 20px; text-align: center; 
+} 
+    nav { background-color: #f8f9fa; padding: 10px; text-align: center; } 
+    nav button { 
+      margin: 0 10px; 
+      padding: 10px 20px; 
+      font-weight: bold; 
+      border: none; 
+      background-color: #28a745; 
+      color: white; 
+      cursor: pointer; 
+      border-radius: 5px; 
+    } 
+    nav button:hover { 
+      background-color: #218838; 
+    } 
+    .content section { display: none; } 
+    .content section.active { display: block; } 
+ 
+    .content { padding: 20px; } 
+    table { width: 100%; border-collapse: collapse; margin-bottom: 30px; } 
+    table, th, td { border: 1px solid #ccc; } 
+    th, td { padding: 10px; text-align: left; } 
+    h2 { color: #28a745; } 
+  </style> 
+</head> 
+<body> 
+ 
+<header> 
+  <h1>Online Grocery Store Dashboard</h1> 
+</header> 
+ 
+<nav> 
+  <button onclick="showSection('prices')">Product Prices</button> 
+  <button onclick="showSection('purchases')">Customer Purchases</button> 
+  <button onclick="showSection('bills')">Total Bills</button> 
+  <button onclick="showSection('profits')">Profits</button> 
+  <button onclick="showSection('quantities')">Total Quantities</button> 
+</nav> 
+ 
+<div class="content"> 
+   
+  <section id="prices" class="active"> 
+    <h2>Product Price List</h2>
+      <table> 
+      <thead> 
+        <tr><th>Product Name</th><th>Price (Rs)</th></tr> 
+      </thead> 
+      <tbody id="priceTable"> 
+        <!-- PHP will populate this --> 
+      </tbody> 
+    </table> 
+  </section> 
+ 
+  <section id="purchases"> 
+    <h2>Customer Purchases</h2> 
+    <table> 
+      <thead> 
+        <tr><th>Customer</th><th>Product</th><th>Quantity</th><th>Price</th></tr> 
+      </thead> 
+      <tbody id="purchaseTable"> 
+        <!-- PHP will populate this --> 
+      </tbody> 
+    </table> 
+  </section> 
+ 
+  <section id="bills"> 
+    <h2>Total Bills Per Customer</h2> 
+    <table> 
+      <thead> 
+        <tr><th>Customer</th><th>Total Bill (Rs)</th></tr> 
+      </thead> 
+      <tbody id="billTable"> 
+        <!-- PHP will populate this --> 
+      </tbody> 
+    </table> 
+  </section> 
+ 
+  <section id="profits"> 
+    <h2>Profits by Product</h2> 
+    <table> 
+      <thead> 
+        <tr><th>Product</th><th>Date</th><th>Profit (Rs)</th></tr> 
+      </thead> 
+      <tbody id="profitTable"> 
+        <!-- PHP will populate this --> 
+      </tbody> 
+    </table>
+      </section> 
+ 
+  <section id="quantities"> 
+    <h2>Total Quantity Sold</h2> 
+    <table> 
+      <thead><tr><th>Total Quantity</th></tr></thead> 
+      <tbody id="quantityTable"> 
+        <!-- PHP will populate this --> 
+      </tbody> 
+    </table> 
+ 
+    <h2>Total Profit</h2> 
+    <table> 
+      <thead><tr><th>Total Profit (Rs)</th></tr></thead> 
+      <tbody id="totalProfitTable"> 
+        <!-- PHP will populate this --> 
+      </tbody> 
+    </table> 
+  </section> 
+</div> 
+ 
+<footer> 
+  <p>&copy; 2025 Online Grocery Store. All rights reserved.</p> 
+</footer> 
+ 
+<script> 
+  function showSection(id) { 
+    const sections = document.querySelectorAll(".content section"); 
+    sections.forEach(sec => sec.classList.remove("active")); 
+    document.getElementById(id).classList.add("active"); 
+  } 
+</script> 
+</body> 
+</html>
